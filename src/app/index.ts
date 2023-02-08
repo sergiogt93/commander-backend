@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import express, { Express, Request, Response } from 'express'
 import { Server } from 'http'
 import cors from 'cors'
+import httpStatus from 'http-status'
 import loadingRoutes from './loadingRoutes'
 
 // Configuration the .env file
@@ -24,6 +25,9 @@ app.use(express.json({ limit: '50mb' }))
 app.get('/', (_req: Request, res: Response) => res.redirect('/api'))
 app.get('/api', (_req: Request, res: Response) => res.send({ message: 'Welcome' } ))
 app.use('/api',loadingRoutes())
+app.use((err: Error, _req: Request, res: Response, _next: Function) => {
+  res.status(httpStatus.INTERNAL_SERVER_ERROR).send(err.message)
+})
 
 const port: string | number = process.env.PORT || 8000
 
