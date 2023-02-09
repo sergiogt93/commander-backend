@@ -16,6 +16,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install
+      - name: npm run build
+        run: |
+          npm run build --if-present
+          npm run lint
         run: |
           npm install
       - name: npm test-unit

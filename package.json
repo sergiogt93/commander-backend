@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "ts-node-dev --ignore-watch node_modules  ./src/app/index.ts",
     "start": "node dist/index.js",
-    "build": "npm run build:tsc && npm run build:di",
+    "test:unit": "jest",
+    "test:unit:coverage": "jest && cd coverage/lcov-report && npx serve",
+    "build": "npm run build:clean && npm run build:tsc && npm run build:di",
     "build:tsc": "tsc -p tsconfig.prod.json",
     "build:di": "copy 'src/**/*.{json,yaml,html,png}' dist/src",
-    "test:unit": "jest",
-    "test:unit:coverage": "jest && cd coverage/lcov-report && npx serve"
+    "build:clean": "rm -r dist; exit 0",
+    "lint": "tslint src/**/*.ts{,x}"
   },
   "keywords": [],
   "author": "",
