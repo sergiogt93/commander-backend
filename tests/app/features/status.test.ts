@@ -1,5 +1,5 @@
 import supertest, { Response, SuperTest, Test } from 'supertest';
-import server from '../../src/app/index';
+import server from '../../../src/app/index';
 
 let application: SuperTest<Test> = supertest(server);
 
