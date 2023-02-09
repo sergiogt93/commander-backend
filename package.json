@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --ignore-watch node_modules  ./src/app/index.ts",
     "start": "node dist/index.js",
-    "test:unit": "jest",
-    "test:unit:coverage": "jest && cd coverage/lcov-report && npx serve",
+    "test": "jest",
+    "test:coverage": "jest && cd coverage/lcov-report && npx serve",
     "build": "npm run build:tsc",
     "build:tsc": "npx tsc"
   },
