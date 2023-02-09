@@ -8,7 +8,7 @@
     "start": "node dist/index.js",
     "test:unit": "jest",
     "test:unit:coverage": "jest && cd coverage/lcov-report && npx serve",
-    "build": "npm run build:clean && npm run build:tsc",
+    "build": "npm run build:tsc && npm run build:di",
     "build:tsc": "tsc -p tsconfig.json",
     "build:di": "copy 'src/**/*.{json,yaml,html,png}' dist/src",
     "lint": "tslint src/**/*.ts{,x}"
