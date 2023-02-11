@@ -11,9 +11,6 @@ dotenv.config()
 // Create Express APP
 const app: Express = express()
 
-// Static server
-app.use(express.static('public'))
-
 // Server congifuration
 app.use(cors())
 
