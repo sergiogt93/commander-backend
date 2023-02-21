@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 import express, { Express, Request, Response } from 'express'
 import { Server } from 'http'
 import cors from 'cors'
-import loadingRoutes from './loadingRoutes'
+import { loadingRoutes } from './loadingRoutes'
 
 // Configuration the .env file
 dotenv.config()

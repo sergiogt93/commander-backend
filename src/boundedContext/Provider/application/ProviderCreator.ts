@@ -1,10 +1,10 @@
-import Provider from '../domain/Provider';
+//import Provider from '../domain/Provider';
 //import ProviderRepository  from '../domain/ProviderRepository';
 
-export default function ProviderCreator (id: string, name: string, duration: string) {
+export default function ProviderCreator (name: string) {
   //let repository: ProviderRepository;
 
-  const Provider: Provider = { id, name };
+  const Provider = { name };
 
   return Provider;
 }
