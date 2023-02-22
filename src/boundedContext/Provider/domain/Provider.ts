@@ -1,6 +1,8 @@
-type Provider = {
-  id: string;
-  name: string;
-}
+export default class Provider {
 
-export default Provider
+	constructor(
+		public readonly id: string,
+		public readonly name: string
+	){}
+
+}
