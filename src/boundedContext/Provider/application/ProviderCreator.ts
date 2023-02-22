@@ -3,9 +3,8 @@
 
 import { ProviderCreatorRequest } from "./ProviderCreatorRequest";
 
-export default function ProviderCreator (name: string) {
+export default function ProviderCreator (request: ProviderCreatorRequest) {
   //let repository: ProviderRepository;
 
-  const Provider: ProviderCreatorRequest = { name };
-  return Provider;
+  return request;
 }
