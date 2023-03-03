@@ -1,5 +1,6 @@
 import mongoose, { Model } from 'mongoose';
-import { ProviderCreatorRequest } from '../../application/ProviderCreatorRequest';
+import { ProviderCreatorDTO } from '../../application/ProviderDTO';
+import Provider from '../../domain/Provider';
 import ProviderRepository from '../../domain/ProviderRepository';
 import ProviderSchema from './ProviderSchema';
 
@@ -7,7 +8,6 @@ export default class MongoProviderRepository implements ProviderRepository {
   public readonly client: Model<any>
 
   constructor() {
-    console.log("Se para al principio");
     this.client = mongoose.model(this.collectionName(), ProviderSchema)
   }
 
@@ -15,8 +15,8 @@ export default class MongoProviderRepository implements ProviderRepository {
     return 'providers';
   }
 
-  public save(provider: ProviderCreatorRequest)  {
-    const newProvider = this.client.create(provider);
+  public save(provider: ProviderCreatorDTO)  {
+    const newProvider: Promise<Provider> = this.client.create(provider);
     return newProvider;
   }
 }

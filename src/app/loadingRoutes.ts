@@ -1,6 +1,5 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { ValidationError, validationResult, Result } from 'express-validator';
-import {  } from 'express-validator/src/validation-result';
 import glob from 'glob';
 
 const router: Router = Router();
@@ -23,7 +22,9 @@ export function validateReqSchema(req: Request, res: Response, next: NextFunctio
     return next();
   }
 
-  const errors = validationErrors.array().map((err: ValidationError) => ({ [err.param]: err.msg }));
+  const errors: { [x: string]: string; }[] = validationErrors.array().map(
+    (err: ValidationError) => ({ [err.param]: err.msg })
+  );
 
   return res.status(422).json(errors);
 }

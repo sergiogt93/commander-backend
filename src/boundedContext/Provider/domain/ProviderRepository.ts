@@ -1,4 +1,4 @@
-import { ProviderCreatorRequest } from '../application/ProviderCreatorRequest';
+import { ProviderCreatorRequest } from '../application/ProviderDTO';
 import Provider from './Provider';
 
 export default interface ProviderRepository {
