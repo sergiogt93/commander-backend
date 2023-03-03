@@ -1,6 +1,6 @@
-import { ProviderCreatorRequest } from '../application/ProviderDTO';
+import { ProviderCreatorDTO } from '../application/ProviderDTO';
 import Provider from './Provider';
 
 export default interface ProviderRepository {
-  save(provider: ProviderCreatorRequest): Promise<Provider>;
+  save(provider: ProviderCreatorDTO): Promise<Provider>;
 }
