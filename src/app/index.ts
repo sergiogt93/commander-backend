@@ -3,6 +3,7 @@ import express, { Express, Request, Response } from 'express'
 import { Server } from 'http'
 import cors from 'cors'
 import { loadingRoutes } from './loadingRoutes'
+import MongoClient from '../boundedContext/Shared/infraestructure/MongoCLient'
 
 // Configuration the .env file
 dotenv.config()
@@ -30,6 +31,7 @@ const port: string | number = process.env.PORT || 8000
 // Execute SERVER
 const server: Server = app.listen(port, () => {
   console.log(`EXPRESS SERVER: Running at http://localhost:${port}`)
+  new MongoClient().connection()
 })
 
 // Control SERVER ERROR

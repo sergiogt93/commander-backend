@@ -1,9 +1,9 @@
-//import Provider from '../domain/Provider';
-//import ProviderRepository  from '../domain/ProviderRepository';
+import MongoProviderRepository  from '../infraestructure/persistence/MongoProviderRepository';
 import { ProviderCreatorRequest } from "./ProviderCreatorRequest";
 
-export default function ProviderCreator (request: ProviderCreatorRequest) {
-  //let repository: ProviderRepository;
+export default async function ProviderCreator (request: ProviderCreatorRequest) {
+  let repository: MongoProviderRepository = new MongoProviderRepository();
 
-  return request;
+  const newProvider = await repository.save(request);
+  return newProvider;
 }
