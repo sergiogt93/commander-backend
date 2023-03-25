@@ -10,8 +10,9 @@ function registerFile(routePath: string) {
 }
 
 export function loadingRoutes() {
-  const routes: string[] = glob.sync(__dirname + '/routes/**/*route.ts');
-  routes.map(route => registerFile(route));
+  const path: string = __dirname.replace('src', '');
+  const routes: string[] = glob.sync('**/*route.ts' . replace(/\\/g, '/'));
+  routes.map(route => registerFile(path + route));
   return router;
 }
 

@@ -3,7 +3,7 @@ import express, { Express, Request, Response } from 'express'
 import { Server } from 'http'
 import cors from 'cors'
 import { loadingRoutes } from './loadingRoutes'
-import MongoClient from '../boundedContext/Shared/infraestructure/MongoClient'
+import MongoClient from './boundedContext/Shared/infraestructure/MongoClient'
 
 // Configuration the .env file
 dotenv.config()

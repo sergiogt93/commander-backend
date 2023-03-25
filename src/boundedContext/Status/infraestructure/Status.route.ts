@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { StatusGetController } from '../controllers/StatusGetController';
+import { StatusGetController } from '../application/StatusGetController';
 
 export function register(router: Router): Router {
   router.get('/status', StatusGetController)
