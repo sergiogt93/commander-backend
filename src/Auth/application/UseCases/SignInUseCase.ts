@@ -1,10 +1,10 @@
-import SignInDTO from "./SignInDTO";
-import MongoAuthRepository from "../infraestructure/AuthRepository";
-import UserAlreadyExistsException from "../domain/UserAreadyExistsException";
-import User from "../../User/domain/User";
-import { comparePassword } from "../../Shared/infraestructure/Encryption";
-import UserInvalidException from "../domain/UserInvalidException";
-import { createToken } from "../../Shared/infraestructure/TokenManager";
+import SignInDTO from "../DTO/SignInDTO";
+import MongoAuthRepository from "../../infraestructure/AuthRepository";
+import UserAlreadyExistsException from "../../domain/Exceptions/UserAreadyExistsException";
+import User from "../../../User/domain/User";
+import { comparePassword } from "../../../Shared/infraestructure/Encryption";
+import UserInvalidException from "../../domain/Exceptions/UserInvalidException";
+import { createToken } from "../../../Shared/infraestructure/TokenManager";
 
 export default async function SignInUseCase (request: SignInDTO) {
   const { username, password } = request;

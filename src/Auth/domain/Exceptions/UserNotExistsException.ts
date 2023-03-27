@@ -1,4 +1,4 @@
-export default class UserAlreadyExistsException extends Error {
+export default class UserNotExistsException extends Error {
   public readonly statusCode: number
 
   constructor () {

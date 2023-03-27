@@ -1,8 +1,8 @@
-import User from "../../User/domain/User";
-import UserNotExistsException from "../domain/UserAreadyExistsException";
-import MongoAuthRepository from "../infraestructure/AuthRepository";
-import SignUpDTO from "./SignUpDTO";
-import { createToken } from "../../Shared/infraestructure/TokenManager";
+import User from "../../../User/domain/User";
+import UserNotExistsException from "../../domain/Exceptions/UserAreadyExistsException";
+import MongoAuthRepository from "../../infraestructure/AuthRepository";
+import SignUpDTO from "../DTO/SignUpDTO";
+import { createToken } from "../../../Shared/infraestructure/TokenManager";
 
 export default async function SignUpUseCase (request: SignUpDTO): Promise<string> {
   let repository: MongoAuthRepository = new MongoAuthRepository();

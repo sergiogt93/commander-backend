@@ -1,7 +1,7 @@
 import mongoose, { Model } from 'mongoose';
 import userSchema from '../../User/infraestructure/UserSchema';
-import SignInDTO from '../application/SignInDTO';
-import SignUpDTO from '../application/SignUpDTO';
+import SignInDTO from '../application/DTO/SignInDTO';
+import SignUpDTO from '../application/DTO/SignUpDTO';
 import IAuthRepository from '../domain/IAuthRepository';
 import User from '../../User/domain/User';
 

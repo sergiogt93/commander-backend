@@ -3,6 +3,6 @@ export default class UserAlreadyExistsException extends Error {
 
   constructor () {
     super('User already exists');
-    this.statusCode = 404;
+    this.statusCode = 409;
   }
 }

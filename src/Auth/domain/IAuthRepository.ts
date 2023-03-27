@@ -1,6 +1,6 @@
 import User from 'src/boundedContext/User/domain/User';
-import SignInDTO from '../application/SignInDTO';
-import SignUpDTO from '../application/SignUpDTO';
+import SignInDTO from '../application/DTO/SignInDTO';
+import SignUpDTO from '../application/DTO/SignUpDTO';
 
 export default interface IAuthRepository {
   register(user: SignUpDTO): Promise<User>;
